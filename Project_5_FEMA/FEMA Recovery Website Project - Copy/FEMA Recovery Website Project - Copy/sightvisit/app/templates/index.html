@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1><p class="tab"><u>FEMA Disaster Report Forms</u></p></h1>
+    <br>
+    <h5><p class="tab">The addresses will be processed and the forms that will be created will be in order to optimize your route</p></h5>
+    <h5><p class="tab">Insert the addresses you would like to visit below:</p></h5>
+
+
+<!-- Google Maps Sample -->
+<!DOCTYPE html>
+    <html>
+    <head>
+
+    </head>
+    <body>
+
+      <form action = "/form1" method = post>
+        <p><h8 class="tab"> <u>Address #1:</u></h8></p>
+        <form method="POST" class="tab">
+            <input class="tab" name="text1">
+
+        </form>
+
+        <h8 class="tab"> <u>Address #2:</u></h8>
+        <form method="POST" class="tab">
+            <input name="text2">
+
+        </form>
+
+        <h8 class="tab"> <u>Address #3:</u></h8>
+        <form method="POST" class="tab">
+            <input name="text3">
+
+        </form>
+
+        <h8 class="tab"> <u>Address #4:</u></h8>
+        <form method="POST" class="tab">
+            <input name="text4">
+
+        </form>
+
+        <h8 class="tab"> <u>Address #5</u></h8>
+        <form method="POST" class="tab">
+            <input name="text5">
+
+        </form>
+
+        <h8 class="tab"> <u>Address #6:</u></h8>
+        <form method="POST" class="tab">
+            <input name="text6">
+
+        </form>
+
+        <h8 class="tab"> <u>Address #7:</u></h8>
+        <form method="POST" class="tab">
+            <input name="text7">
+
+        </form>
+
+        <h8 class="tab"> <u>Address #8:</u></h8>
+        <form method="POST" class="tab">
+            <input name="text8">
+
+        </form>
+
+        <h8 class="tab"> <u>Address #9:</u></h8>
+        <form method="POST" class="tab">
+            <input name="text9">
+
+        </form>
+
+        <h8 class="tab"> <u>Address #10:</u></h8>
+        <form method="POST" class="tab">
+            <input name="text10">
+
+        </form>
+
+
+
+
+        <form type="submit", action="http://127.0.0.1:5000/", method="GET"> </form>
+        <p><input class="tab" type="submit"> </input></p>
+
+
+
+        {{allmarkermap.html}}
+        {{allmarkermap.js}}
+
+
+
+      </form>
+
+    </body>
+</html>
+
+{% endblock %}

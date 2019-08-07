@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+<html>
+   <body>
+     <style>
+     img {float: right;}
+
+.overlap {position:relative}
+     </style>
+      <form action = "/contact" method = post>
+         <fieldset>
+            <!-- <legend>Disaster Form</legend> -->
+            {{ form.hidden_tag() }}
+            <!--Street view image -->
+              <p><img src={{image_link}} alt = {{image_link}}></p>
+
+
+              <p><h4 class="tab"> <u><b>General House Details:</b></u></h4></p>
+              <p class="tab"> <b>{{ form.name.label }} </b>{{ form.name }}<br>
+              <p class="tab"> <b>{{ form.email.label }} </b>{{ form.email }}<br>
+                <p class="tab"><b>{{ form.Homes.label }}</b> {{ form.Homes }}</p>
+                <p class="tab"> <b>{{ form.Address.label }} </b>{{address_main}}<br>
+                <p class="tab"><b>Town/City: </b>{{address_city}}<br></p>
+                <p class="tab"><b>{{ form.State.label }} </b>{{address_state}}<br></p>
+                <p class="tab"><b>{{ form.Zip_Code.label }} </b>{{address_zip}}<br></p>
+
+
+
+
+               <h4 class="tab"> <u><b>Additional Property Details:</b></u></h4>
+               <p class="tab"> <b>House Type: </b>{{ bldg_type }}<br>
+                              <p class="tab"><b>Square Footage: </b>{{ bldg_size }}<br></p>
+
+                              <!-- Google Maps window -->
+                              {{onemarkermap.html}}
+                              {{onemarkermap.js}}
+
+                              <p class="tab"><b>Year Built: </b>{{ built_year }}<br></p>
+                              <p class="tab"><b>Number of Bedrooms: </b>{{ beds }}<br></p>
+                              <p class="tab"><b>Number of Bathrooms: </b>{{ baths }}<br></p>
+                              <p class="tab"><b>Estimated Valuation (Zillow - {{val_desc}}): </b>{{ value }}<br></p>
+                              <p class="tab"><b>Valuation Date (Zillow - {{val_desc}}): </b>{{ val_date }}<br></p>
+              </p>
+
+
+               <h4 class="tab"> <u><b>Damage Details:</b></u></h4>
+               <p class="tab"> {{ form.Flood_Plain.label }} {{ form.Flood_Plain }}<br></p>
+               <!-- <p class="tab"> {{ form.Flood_NonFlood.label }} {{ form.Flood_NonFlood }}</p> -->
+                               <p class="tab">{{ form.Insurance.label }} {{ form.Insurance }}<br></p>
+                               <p class="tab">{{ form.Flood_Insurance.label }} {{ form.Flood_Insurance }}<br></p>
+                               <p class="tab">{{ form.Damage_Level.label }} {{ form.Damage_Level}}<br></p>
+               </p>
+
+
+               <p class="tab">{{ form.submit }} </p>
+
+
+
+
+
+         </fieldset>
+      </form>
+   </body>
+</html>
+{% endblock %}

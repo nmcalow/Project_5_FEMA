@@ -1,0 +1,55 @@
+<!-- This page connects to base html -->
+{% extends "base.html" %}
+{% block content %}
+<html>
+   <body>
+      <form action = "{{url_for('form1')}}" method = post>
+        <textarea name="text"></textarea>
+        <input type="submit">
+      </form>
+            <!-- <legend>Disaster Form</legend> -->
+            {{ form.hidden_tag() }}
+
+              <!-- Google Map window -->
+              {{sndmap.html}
+
+              <h5 class="tab"> <u><b>General House Details:</b></u></h5>
+              <p class="tab"> <b>{{ form.name.label }} </b>{{ form.name }}<br>
+              <p class="tab"> <b>{{ form.email.label }} </b>{{ form.email }}<br>
+                <p class="tab"> <b>{{ form.Address.label }} </b>{{address}}<br>
+                <p class="tab"><b>Town/City: </b>{{city}}<br></p>
+               <!-- {{ form.Address(default=address) }}<br> -->
+                <p class="tab"><b>{{ form.State.label }} </b>{{address_state}}<br></p>
+               <!-- {{ form.State }}<br> -->
+                <p class="tab"><b>{{ form.Zip_Code.label }} </b>{{zipcode}}<br></p>
+               <!-- {{ form.Zip_Code }}</p><br> -->
+                <p class="tab"><b>{{ form.Homes.label }}</b> {{ form.Homes }}</p>
+
+               <h5 class="tab"> <u><b>Additional Property Details:</b></u></h5>
+               <p class="tab"> <b>House Type: </b>{{ bldg_type }}<br>
+                               <b>Square Footage: </b>{{ bldg_size }}<br>
+                               <b>Year Built: </b>{{ built_year }}<br>
+                               <b>Number of Bedrooms: </b>{{ beds }}<br>
+                               <b>Number of Bathrooms: </b>{{ baths }}<br>
+                               <b>Estimated Valuation (Zillow - {{val_desc}}): </b>{{ value }}<br>
+                               <b>Valuation Date (Zillow - {{val_desc}}): </b>{{ val_date }}<br>
+              </p>
+
+               <h5 class="tab"> <u><b>Damage Details:</b></u></h5>
+               <p class="tab"> {{ form.Flood_Plain.label }} {{ form.Flood_Plain }}<br>
+               <!-- <p class="tab"> {{ form.Flood_NonFlood.label }} {{ form.Flood_NonFlood }}</p> -->
+                               {{ form.Insurance.label }} {{ form.Insurance }}<br>
+                               {{ form.Flood_Insurance.label }} {{ form.Flood_Insurance }}<br>
+                               {{ form.Damage_Level.label }} {{ form.Damage_Level}}<br>
+               </p>
+               <br>
+
+
+               <p class="tab">{{ form.submit }} </p>
+
+
+         </fieldset>
+      </form>
+   </body>
+</html>
+{% endblock %}
